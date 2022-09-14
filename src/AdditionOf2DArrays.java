@@ -1,9 +1,9 @@
 public class AdditionOf2DArrays {
     public static void main(String[] args) {
 
-        int[][] array1 = arrayCreater(3,3);
+        int[][] array1 = arrayGenerator(3,3);
 
-        int[][] array2 = arrayCreater(3,3);
+        int[][] array2 = arrayGenerator(3,3);
 
         int[][] array3 = arrayAdder(array1,array2);
 
@@ -16,13 +16,14 @@ public class AdditionOf2DArrays {
         arrayPrinterUsingForEachLoop( array3);
     }
 
-    public static int[][] arrayCreater(int row, int col){
+    public static int[][] arrayGenerator(int row, int col){
 
+        int num = 1;
         int[][] arrayName = new int[row][col];
 
         for(int i=0; i<row; i++) {
             for( int j=0; j<col; j++){
-                arrayName[i][j] = i+j;
+                arrayName[i][j] = num++;
             }
         }
 
@@ -48,8 +49,9 @@ public class AdditionOf2DArrays {
     public static void arrayPrinterUsingForEachLoop( int[][] arrayName ) {
 
         System.out.println("Printing using For Each / Enhanced Loop : ");
-        for( int[] arr : arrayName){
-            for( int val : arr){
+
+        for( int[] newArr : arrayName){
+            for( int val : newArr){
                 System.out.print( val + " ");
             }
         }
